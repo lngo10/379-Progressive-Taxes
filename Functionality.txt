@@ -1,0 +1,21 @@
+CURRENT FUNCTIONALITY
+	1. take user input
+		a. filing status
+		b. income
+	2. calculate tax from brackets
+	3. reun multiple times
+
+
+
+BACKLOG FEATURES
+	1. calculate percentage of income paid as tax
+		a. tax/inc and output
+	2. enter custom tax bracket
+
+COMPLETED BACKLOG
+1
+
+
+CURRENTLY WORKING ON:
+
+backlog feature 1

@@ -12,14 +12,6 @@ using namespace std;
 35%	    $204,101 –  $510,300	$408,201 –  $612,350	    $204,101 –  $306,750	        $204,101 – $510,300
 37%	    $510,301 or more	    $612,351 or more	        $306,751 or more	            $510,301 or more        */
 
-void taxtext()
-{
-    double taxo = 0, taxpo = 0;
-    cout << "Your yearly tax is " << taxo << endl;
-    cout << "You pay " << taxpo << "of your total income" << endl;
-    return;
-}
-
 void taxcalculation(double, double, double, double, double, double, double);
 
 class Bracket {
@@ -30,7 +22,7 @@ public:
 int main()
 {   //variables
     int status;
-    double b1, b2, b3, b4, b5, b6, inc;
+    double inc, b1, b2, b3, b4, b5, b6; //tax, taxpct;
 
     //tax brackets
     Bracket sin;
@@ -42,7 +34,7 @@ int main()
     Bracket hoh;
     hoh.b1 = 13850, hoh.b2 = 52850, hoh.b3 = 84200, hoh.b4 = 160700, hoh.b5 = 204100, hoh.b6 = 510300;
 
-    //ask to rerun
+    //allow program to rerun
     char rr = 'y';
     while (rr == 'Y' || rr == 'y') {
     
@@ -62,6 +54,7 @@ int main()
         case 1:
             b1 = sin.b1, b2 = sin.b2, b3 = sin.b3, b4 = sin.b4, b5 = sin.b5, b6 = sin.b6;
             taxcalculation(inc, b1, b2, b3, b4, b5, b6);
+
             break;
         case 2:
             b1 = mfj.b1, b2 = mfj.b2, b3 = mfj.b3, b4 = mfj.b4, b5 = mfj.b5, b6 = mfj.b6;
@@ -79,6 +72,7 @@ int main()
             cout << "Feature not available yet" << endl;
             break;
         }
+        //ask to rerun
         cout << "rerun program? [Y/N]" << endl;
         cin >> rr;
         cout << endl;
@@ -87,40 +81,31 @@ int main()
 
 //calculate taxes
 void taxcalculation(double inc, double b1, double b2, double b3, double b4, double b5, double b6) {
-    double tax;
+    double tax, taxpct;
     double r1 = 0.10, r2 = 0.12, r3 = 0.22, r4 = 0.24, r5 = 0.32, r6 = 0.35, r7 = 0.37;
     //
     if (inc <= b1) {
         tax = r1 * inc;
-        cout << "Your yearly tax is " << tax << endl;
     }
-
     else if (inc > b1 && inc <= b2) {
         tax = r1 * (b1 - 0) + r2 * (inc - b1);
-        cout << "Your yearly tax is " << tax << endl;
     }
-
     else if (inc > b2 && inc <= b3) {
         tax = r1 * (b1 - 0) + r2 * (b2 - b1) + r3 * (inc - b2);
-        cout << "Your yearly tax is " << tax << endl;
     }
-
     else if (inc > b3 && inc <= b4) {
-        tax = r1 * (b1 - 0) + r2 * (b2 - b1) + r3 * ( - b2) + r4 * (inc - b3);
-        cout << "Your yearly tax is " << tax << endl;
+        tax = r1 * (b1 - 0) + r2 * (b2 - b1) + r3 * (b3 - b2) + r4 * (inc - b3);
     }
-
     else if (inc > b4 && inc <= b5) {
         tax = r1 * (b1 - 0) + r2 * (b2 - b1) + r3 * (b3 - b2) + r4 * (b4 - b3) + r5 * (inc - b4);
-        cout << "Your yearly tax is " << tax << endl;
     }
-
     else if (inc > b5 && inc <= b6) {
         tax = r1 * (b1 - 0) + r2 * (b2 - b1) + r3 * (b3 - b2) + r4 * (b4 - b3) + r5 * (inc - b4) + r6 * (inc - b5);
-        cout << "Your yearly tax is " << tax << endl;
     }
     else if (inc > b6) {
         tax = r1 * (b1 - 0) + r2 * (b2 - b1) + r3 * (b3 - b2) + r4 * (b4 - b3) + r5 * (inc - b4) + r6 * (inc - b5) + r7 * (inc - b6);
-        cout << "Your yearly tax is " << tax << endl; 
     }
+    taxpct = (tax / inc) * 100;
+    cout << "Your yearly tax is " << tax << endl;
+    cout << "You pay " << taxpct << "% of your total income as tax" << endl;
 }
