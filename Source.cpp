@@ -38,12 +38,12 @@ int main()
     //tax rates
     //auto r = vector<double>{ 0.1, 0.12, 0.22, 0.24, 0.32, 0.35, 0.37 };
     double r1 = 0.10, r2 = 0.12, r3 = 0.22, r4 = 0.24, r5 = 0.32, r6 = 0.35, r7 = 0.37;
-    / double r2 = 0.12;
+    /*double r2 = 0.12;
 
     double r4 = 0.24;
     double r5 = 0.32;
     double r6 = 0.35;
-    double r7 = 0.37;
+    double r7 = 0.37; */
 
     Bracket sin;
     sin.b1 = 9700;
@@ -142,7 +142,7 @@ int main()
     if (inc <= sin.b1) {
         tax = r1 * inc;
         cout << "Your yearly tax is " << tax << endl;
-        //taxout();
+        //taxout();// 
     }
 
     else if (inc > sin.b1&& inc <= sin.b2) {
