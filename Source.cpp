@@ -30,8 +30,7 @@ public:
 int main()
 {   //variables
     int status;
-    double b1, b2, b3, b4, b5, b6;
-    double inc; //= 0; 
+    double b1, b2, b3, b4, b5, b6, inc;
 
     //tax brackets
     Bracket sin;
@@ -42,42 +41,48 @@ int main()
     mfs.b1 = 9700, mfs.b2 = 39475, mfs.b3 = 84200, mfs.b4 = 160725, mfs.b5 = 204100, mfs.b6 = 306750;
     Bracket hoh;
     hoh.b1 = 13850, hoh.b2 = 52850, hoh.b3 = 84200, hoh.b4 = 160700, hoh.b5 = 204100, hoh.b6 = 510300;
-    
-    //ask for input
-    cout << "enter filing status:" << endl;
-    cout << "enter [1] for single" << endl;
-    cout << "enter [2] for married filing separately" << endl;
-    cout << "enter [3] for married filing jointly" << endl;
-    cout << "enter [4] for head of household" << endl;
-    cout << "enter [5] for custom tax bracket" << endl;
-    cin >> status;
-    cout << "enter income" << endl;
-    cin >> inc;
 
-    //find filing status
-    switch (status) {
-    case 1:
-        b1 = sin.b1, b2 = sin.b2, b3 = sin.b3, b4 = sin.b4, b5 = sin.b5, b6 = sin.b6;
-        taxcalculation(inc, b1, b2, b3, b4, b5, b6);
-        break;
-    case 2:
-        b1 = mfj.b1, b2 = mfj.b2, b3 = mfj.b3, b4 = mfj.b4, b5 = mfj.b5, b6 = mfj.b6;
-        taxcalculation(inc, b1, b2, b3, b4, b5, b6);
-        break;
-    case 3:
-        b1 = mfs.b1, b2 = mfs.b2, b3 = mfs.b3, b4 = mfs.b4, b5 = mfs.b5, b6 = mfs.b6;
-        taxcalculation(inc, b1, b2, b3, b4, b5, b6);
-        break;
-    case 4:
-        b1 = hoh.b1, b2 = hoh.b2, b3 = hoh.b3, b4 = hoh.b4, b5 = hoh.b5, b6 = hoh.b6;
-        taxcalculation(inc, b1, b2, b3, b4, b5, b6);
-        break;
-    case 5:
-        cout << "Feature not available yet" << endl;
-        break;
+    //ask to rerun
+    char rr = 'y';
+    while (rr == 'Y' || rr == 'y') {
+    
+        //ask for input
+        cout << "enter filing status:" << endl;
+        cout << "enter [1] for single" << endl;
+        cout << "enter [2] for married filing separately" << endl;
+        cout << "enter [3] for married filing jointly" << endl;
+        cout << "enter [4] for head of household" << endl;
+        cout << "enter [5] for custom tax bracket" << endl;
+        cin >> status;
+        cout << "enter income" << endl;
+        cin >> inc;
+
+        //find filing status and calculate tax
+        switch (status) {
+        case 1:
+            b1 = sin.b1, b2 = sin.b2, b3 = sin.b3, b4 = sin.b4, b5 = sin.b5, b6 = sin.b6;
+            taxcalculation(inc, b1, b2, b3, b4, b5, b6);
+            break;
+        case 2:
+            b1 = mfj.b1, b2 = mfj.b2, b3 = mfj.b3, b4 = mfj.b4, b5 = mfj.b5, b6 = mfj.b6;
+            taxcalculation(inc, b1, b2, b3, b4, b5, b6);
+            break;
+        case 3:
+            b1 = mfs.b1, b2 = mfs.b2, b3 = mfs.b3, b4 = mfs.b4, b5 = mfs.b5, b6 = mfs.b6;
+            taxcalculation(inc, b1, b2, b3, b4, b5, b6);
+            break;
+        case 4:
+            b1 = hoh.b1, b2 = hoh.b2, b3 = hoh.b3, b4 = hoh.b4, b5 = hoh.b5, b6 = hoh.b6;
+            taxcalculation(inc, b1, b2, b3, b4, b5, b6);
+            break;
+        case 5:
+            cout << "Feature not available yet" << endl;
+            break;
+        }
+        cout << "rerun program? [Y/N]" << endl;
+        cin >> rr;
+        cout << endl;
     }
-
-    
 }
 
 //calculate taxes
@@ -88,7 +93,6 @@ void taxcalculation(double inc, double b1, double b2, double b3, double b4, doub
     if (inc <= b1) {
         tax = r1 * inc;
         cout << "Your yearly tax is " << tax << endl;
-        //taxout();// 
     }
 
     else if (inc > b1 && inc <= b2) {
