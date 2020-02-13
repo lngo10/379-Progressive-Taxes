@@ -1,0 +1,86 @@
+OBJECTIVE: 
+	1.	allow code to take input for different filing statuses
+		single, married filing jointly, married filing separately, head of household
+	2.	allow code to calculate taxes for each tax bracket
+
+ALGORITHM:
+	1.	input filing status
+	2.  input income
+	3.	function to calculate taxes (one universal function that can accounts for bracket)
+	4.  output tax amount, calculate % of total income
+
+
+TAX	CALCULATION FUNCTION:
+	1.	take inputted income
+	2.	find which bracket it belongs to
+	3.  calculate tax value for each bracket
+	4.	calculate % of total income
+	5.  output tax, tax % values
+
+
+FINDING TAX BRACKET
+	1.  Declare variables for upper bracket number per status and variables for tax rates
+	2. 	class for tax brackets
+			6 variables based on last number of each bracket
+			int b1, b2, b3, b4, b5, b6
+	3.  switch case:
+			switch single
+			case single:
+			Class = s_bracket
+			calculation
+
+			case mfj:
+			Class = mfj_bracket
+			calculation
+
+			case mfs:
+			Class = mfs_bracket
+			calculation
+
+			etc...
+
+CALCULATION FOR TAX (HOW DO WE COME UP WTIH GENERAL FORMULA FOR CALCULATING TOTAL TAX)
+we could just do conditional if, else if, else statements for each bracket but
+to challenge ourselfves lets try to create a loop that can do it, to simplify code. we know that
+	bracket 1: income < b1
+	tax = inc * r1
+
+	bracket 2: income < b2
+	b1*r1 + r2* (inc - b1)
+	
+	bracket 3: income < b3
+	b1*r1 + r2 (b2-b1) + r3(inc - b3)
+
+GUESS
+	b1*r1 (if scenario)
+
+	else
+	b1*r1 + r2(inc-b1)
+	b1*r1 + r2(b2-b1) + r3(inc - b3)
+
+	starting at b1*r1 add tax rate * (income - bracket 1)
+	
+
+
+PSEUDOCODE
+	if bracket = sin_bracket
+	tax = r1 * inc
+	else
+		switch status
+			case mfj
+			bracket = mfj_bracket
+			case mjs
+
+			case hoh
+
+FUTURE DESIRED FUNCTIONALITY
+	alter tax bracket
+		1. ask if default tax bracket is okay
+		2. if yes, continue with code
+		   if no, manually enter tax infor
+		3. 
+
+
+WHAT I LEARNED
+	switch function if desired variable is exactly = an int, char, string
+	if, else if, else if desired if variable is within a range
