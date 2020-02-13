@@ -3,6 +3,6 @@ https://www.reddit.com/r/dailyprogrammer/comments/cdieag/20190715_challenge_379_
 
 Now, this tax calculator can estimate taxes for the actual 2019 tax bracket for people filing as single.
 
-The married (jointly), married (separately), and head of household filing statuses will be added very shortly.
+The married (jointly), married (separately), and head of household filing statuses has just been added.
 
 I am currently expanding the project to allow the user to input a custom tax bracket. Afterwards the goal will be to simplify the code.
