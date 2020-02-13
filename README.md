@@ -1,15 +1,8 @@
-# 379-Progressive-Taxes
-
-The nation of Examplania has the following income tax brackets:
-
-income cap      marginal tax rate
-  ¤10,000           0.00 (0%) -
-  ¤30,000           0.10 (10%) -
- ¤100,000           0.25 (25%) -
-    --              0.40 (40%) -
-If you're not familiar with how tax brackets work, see the section below for an explanation.
-
-Given a whole-number income amount up to ¤100,000,000, find the amount of tax owed in Examplania. Round down to a whole number of ¤.
-
-Detailed info found at:
+This project started out as a simple tax calculator from this reddit challenge
 https://www.reddit.com/r/dailyprogrammer/comments/cdieag/20190715_challenge_379_easy_progressive_taxation/
+
+Now, this tax calculator can estimate taxes for the actual 2019 tax bracket for people filing as single.
+
+The married (jointly), married (separately), and head of household filing statuses will be added very shortly.
+
+I am currently expanding the project to allow the user to input a custom tax bracket. Afterwards the goal will be to simplify the code.
