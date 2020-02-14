@@ -11,11 +11,19 @@ BACKLOG FEATURES
 	1. calculate percentage of income paid as tax
 		a. tax/inc and output
 	2. enter custom tax bracket
+	3. 
 
 COMPLETED BACKLOG
 1
 
 
 CURRENTLY WORKING ON:
+2
 
-backlog feature 1
+
+FEATURE PLANNING
+	2. custom tax bracket
+		a. enter tax bracket as follows
+		b. [0.x, y]
+		c. example
+		d. [0.1, 10000, 0.2, 20000, 0.3, 30000]
