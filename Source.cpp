@@ -83,10 +83,10 @@ void taxcalculation(double inc, double b1, double b2, double b3, double b4, doub
         tax = r1 * b1 + r2 * (b2 - b1) + r3 * (b3 - b2) + r4 * (b4 - b3) + r5 * (inc - b4);
     }
     else if (inc > b5 && inc <= b6) {
-        tax = r1 * b1 + r2 * (b2 - b1) + r3 * (b3 - b2) + r4 * (b4 - b3) + r5 * (inc - b4) + r6 * (inc - b5);
+        tax = r1 * b1 + r2 * (b2 - b1) + r3 * (b3 - b2) + r4 * (b4 - b3) + r5 * (b5 - b4) + r6 * (inc - b5);
     }
     else if (inc > b6) {
-        tax = r1 * b1 + r2 * (b2 - b1) + r3 * (b3 - b2) + r4 * (b4 - b3) + r5 * (inc - b4) + r6 * (inc - b5) + r7 * (inc - b6);
+        tax = r1 * b1 + r2 * (b2 - b1) + r3 * (b3 - b2) + r4 * (b4 - b3) + r5 * (b5 - b4) + r6 * (b6 - b5) + r7 * (inc - b6);
     }
     taxpct = (tax / inc) * 100;
     posttax = inc - tax;
