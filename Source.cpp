@@ -49,13 +49,13 @@ int main() {
 void taxcalculation(double inc, double b1, double b2, double b3, double b4, double b5, double b6) { //calculate taxes
     double tax, taxpct, posttax;
     double r1 = 0.10, r2 = 0.12, r3 = 0.22, r4 = 0.24, r5 = 0.32, r6 = 0.35, r7 = 0.37;
-    if (inc <= b1) { tax = r1 * inc; }
-    else if (inc > b1&& inc <= b2) { tax = r1 * b1 + r2 * (inc - b1); }
-    else if (inc > b2&& inc <= b3) { tax = r1 * b1 + r2 * (b2 - b1) + r3 * (inc - b2); }
-    else if (inc > b3&& inc <= b4) { tax = r1 * b1 + r2 * (b2 - b1) + r3 * (b3 - b2) + r4 * (inc - b3); }
-    else if (inc > b4&& inc <= b5) { tax = r1 * b1 + r2 * (b2 - b1) + r3 * (b3 - b2) + r4 * (b4 - b3) + r5 * (inc - b4); }
-    else if (inc > b5&& inc <= b6) { tax = r1 * b1 + r2 * (b2 - b1) + r3 * (b3 - b2) + r4 * (b4 - b3) + r5 * (b5 - b4) + r6 * (inc - b5); }
-    else if (inc > b6) { tax = r1 * b1 + r2 * (b2 - b1) + r3 * (b3 - b2) + r4 * (b4 - b3) + r5 * (b5 - b4) + r6 * (b6 - b5) + r7 * (inc - b6); }
+    if (inc <= b1)                   { tax = r1 * inc; }
+    else if (inc > b1 && inc <= b2)  { tax = r1 * b1 + r2 * (inc - b1); }
+    else if (inc > b2 && inc <= b3)  { tax = r1 * b1 + r2 * (b2 - b1) + r3 * (inc - b2); }
+    else if (inc > b3 && inc <= b4)  { tax = r1 * b1 + r2 * (b2 - b1) + r3 * (b3 - b2) + r4 * (inc - b3); }
+    else if (inc > b4 && inc <= b5)  { tax = r1 * b1 + r2 * (b2 - b1) + r3 * (b3 - b2) + r4 * (b4 - b3) + r5 * (inc - b4); }
+    else if (inc > b5 && inc <= b6)  { tax = r1 * b1 + r2 * (b2 - b1) + r3 * (b3 - b2) + r4 * (b4 - b3) + r5 * (b5 - b4) + r6 * (inc - b5); }
+    else if (inc > b6)               { tax = r1 * b1 + r2 * (b2 - b1) + r3 * (b3 - b2) + r4 * (b4 - b3) + r5 * (b5 - b4) + r6 * (b6 - b5) + r7 * (inc - b6); }
     taxpct = (tax / inc) * 100;
     posttax = inc - tax;
     cout << "Your yearly tax is $" << tax << "." << endl;
